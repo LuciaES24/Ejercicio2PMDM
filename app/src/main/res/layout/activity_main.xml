@@ -11,127 +11,145 @@
         android:layout_width="281dp"
         android:layout_height="51dp"
         android:minHeight="48dp"
-        android:text="Calculando..."
+        android:text="|"
+        android:textSize="33dp"
         android:textAlignment="center"
         tools:layout_editor_absoluteX="60dp"
         tools:layout_editor_absoluteY="97dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:editable="false"/>
 
     <LinearLayout
-        android:layout_width="92dp"
-        android:layout_height="264dp"
+        android:layout_width="94dp"
+        android:layout_height="448dp"
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteX="51dp"
         tools:layout_editor_absoluteY="161dp">
 
         <Button
             android:id="@+id/botonSumar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+"></Button>
+            android:text="@string/botonSuma"
+            android:textSize="33dp"></Button>
 
         <Button
             android:id="@+id/boton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/boton1"></Button>
+            android:text="@string/boton1"
+            android:textSize="33dp"></Button>
 
         <Button
             android:id="@+id/boton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/boton4"></Button>
+            android:text="@string/boton4"
+            android:textSize="33dp"></Button>
 
         <Button
             android:id="@+id/boton7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="7"></Button>
+            android:text="@string/boton7"
+            android:textSize="33dp"></Button>
 
         <Button
             android:id="@+id/botonmultiplicar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/botonMultiplicar"></Button>
+            android:text="@string/botonMultiplicar"
+            android:textSize="33dp"></Button>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="89dp"
-        android:layout_height="280dp"
+        android:layout_width="94dp"
+        android:layout_height="392dp"
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteX="158dp"
         tools:layout_editor_absoluteY="161dp">
 
         <Button
             android:id="@+id/botonCE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/botonCE"></Button>
+            android:text="@string/botonCE"
+            android:textSize="33dp"></Button>
 
         <Button
             android:id="@+id/boton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2"></Button>
+            android:text="@string/boton2"
+            android:textSize="33dp"></Button>
 
         <Button
             android:id="@+id/boton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/boton5"></Button>
+            android:text="@string/boton5"
+            android:textSize="33dp"></Button>
 
         <Button
             android:id="@+id/boton8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/boton8"></Button>
+            android:text="@string/boton8"
+            android:textSize="33dp"></Button>
 
         <Button
-            android:id="@+id/botonDivision"
+            android:id="@+id/boton0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/botonDivision"></Button>
+            android:text="@string/boton0"
+            android:textSize="33dp"></Button>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="91dp"
-        android:layout_height="267dp"
+        android:layout_height="339dp"
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="258dp"
+        tools:layout_editor_absoluteX="262dp"
         tools:layout_editor_absoluteY="161dp">
 
         <Button
             android:id="@+id/botonIgual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/botonIgual"></Button>
+            android:text="@string/botonIgual"
+            android:textSize="33dp"></Button>
 
         <Button
             android:id="@+id/boton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/boton3"></Button>
+            android:text="@string/boton3"
+            android:textSize="33dp"></Button>
 
         <Button
             android:id="@+id/boton6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="6"></Button>
+            android:text="@string/boton6"
+            android:textSize="33dp"></Button>
 
         <Button
             android:id="@+id/boton9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="9"></Button>
+            android:text="@string/boton9"
+            android:textSize="33dp"></Button>
 
         <Button
             android:id="@+id/botonRestar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"></Button>
+            android:text="@string/botonRestar"
+            android:textSize="33dp"></Button>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
