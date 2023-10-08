@@ -3,8 +3,8 @@ package com.lespsan543.ejercicio2pmdm
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     lateinit var textoCalcular : TextView
@@ -25,11 +25,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var botonIgual : Button
     lateinit var botonCE : Button
 
-    var numeroActual=""
-    var numeroAnterior=""
-    var operacion = ""
-    var pantalla = ""
-    var total = 0.0
+    var calculo = Calculo()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         inicializarComponentes()
 
         inicializarListeners()
+
     }
 
     fun inicializarComponentes(){
@@ -61,134 +58,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun inicializarListeners(){
-        boton1.setOnClickListener { pulsar1() }
-        boton2.setOnClickListener { pulsar2() }
-        boton3.setOnClickListener { pulsar3() }
-        boton4.setOnClickListener { pulsar4() }
-        boton5.setOnClickListener { pulsar5() }
-        boton6.setOnClickListener { pulsar6() }
-        boton7.setOnClickListener { pulsar7() }
-        boton8.setOnClickListener { pulsar8() }
-        boton9.setOnClickListener { pulsar9() }
-        boton0.setOnClickListener { pulsar0() }
-        botonSumar.setOnClickListener { pulsarSuma() }
-        botonRestar.setOnClickListener { pulsarResta() }
-        botonMultiplicar.setOnClickListener { pulsarMultiplicacion() }
-        botonDividir.setOnClickListener { pulsarDivision() }
-        botonIgual.setOnClickListener { pulsarIgual() }
-        botonCE.setOnClickListener { pulsarCE() }
+        boton1.setOnClickListener { calculo.pulsar1(textoCalcular) }
+        boton2.setOnClickListener { calculo.pulsar2(textoCalcular) }
+        boton3.setOnClickListener { calculo.pulsar3(textoCalcular) }
+        boton4.setOnClickListener { calculo.pulsar4(textoCalcular) }
+        boton5.setOnClickListener { calculo.pulsar5(textoCalcular) }
+        boton6.setOnClickListener { calculo.pulsar6(textoCalcular) }
+        boton7.setOnClickListener { calculo.pulsar7(textoCalcular) }
+        boton8.setOnClickListener { calculo.pulsar8(textoCalcular) }
+        boton9.setOnClickListener { calculo.pulsar9(textoCalcular) }
+        boton0.setOnClickListener { calculo.pulsar0(textoCalcular) }
+        botonSumar.setOnClickListener { calculo.pulsarSuma(textoCalcular) }
+        botonRestar.setOnClickListener { calculo.pulsarResta(textoCalcular) }
+        botonMultiplicar.setOnClickListener { calculo.pulsarMultiplicacion(textoCalcular) }
+        botonDividir.setOnClickListener { calculo.pulsarDivision(textoCalcular) }
+        botonIgual.setOnClickListener { calculo.pulsarIgual(textoCalcular) }
+        botonCE.setOnClickListener { calculo.pulsarCE(textoCalcular) }
     }
 
-    fun pulsar1(){
-        numeroActual+="1"
-        pantalla +="1"
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsar2(){
-        numeroActual+="2"
-        pantalla += "2"
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsar3(){
-        numeroActual+="3"
-        pantalla += "3"
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsar4(){
-        numeroActual+="4"
-        pantalla += "4"
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsar5(){
-        numeroActual+="5"
-        pantalla += "5"
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsar6(){
-        numeroActual+="6"
-        pantalla += "6"
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsar7(){
-        numeroActual+="7"
-        pantalla += "7"
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsar8(){
-        numeroActual+="8"
-        pantalla += "8"
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsar9(){
-        numeroActual+="9"
-        pantalla += "9"
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsar0(){
-        numeroActual+="0"
-        pantalla += "0"
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsarSuma(){
-        operacion = "+"
-        pantalla += "+"
-        numeroAnterior = numeroActual
-        numeroActual = ""
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsarResta(){
-        operacion = "-"
-        pantalla += "-"
-        numeroAnterior = numeroActual
-        numeroActual = ""
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsarMultiplicacion(){
-        operacion = "x"
-        pantalla += "x"
-        numeroAnterior = numeroActual
-        numeroActual = ""
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsarDivision(){
-        operacion = "/"
-        pantalla += "÷"
-        numeroAnterior = numeroActual
-        numeroActual = ""
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsarIgual(){
-        when (operacion){
-            "+" -> total = numeroAnterior.toDouble()+numeroActual.toDouble()
-            "-" -> total = numeroAnterior.toDouble()-numeroActual.toDouble()
-            "x" -> total = numeroAnterior.toDouble()*numeroActual.toDouble()
-            "/" -> total = numeroAnterior.toDouble()/numeroActual.toDouble()
-        }
-        pantalla = total.toString()
-        numeroActual = total.toString()
-        textoCalcular.text = pantalla
-    }
-
-    fun pulsarCE(){
-        numeroAnterior = ""
-        numeroActual = ""
-        operacion = ""
-        pantalla = ""
-        total = 0.0
-        textoCalcular.text = pantalla
-    }
 }
