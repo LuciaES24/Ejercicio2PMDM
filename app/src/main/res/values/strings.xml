@@ -7,7 +7,6 @@
     <string name="boton8">8</string>
     <string name="botonMultiplicar">x</string>
     <string name="botonIgual">=</string>
-    <string name="botonCE">CE</string>
     <string name="botonSuma">+</string>
     <string name="boton7">7</string>
     <string name="boton2">2</string>
@@ -15,4 +14,7 @@
     <string name="boton6">6</string>
     <string name="botonRestar">-</string>
     <string name="boton0">0</string>
+    <string name="botonDividir">÷</string>
+    <string name="textoMostrar">|</string>
+    <string name="botonCE">CE</string>
 </resources>

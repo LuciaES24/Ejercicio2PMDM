@@ -7,148 +7,207 @@
     tools:context=".MainActivity"
     android:layout_gravity="center">
 
-    <EditText
-        android:layout_width="281dp"
-        android:layout_height="51dp"
+    <TextView
+        android:id="@+id/mostrarCalculos"
+        android:layout_width="425dp"
+        android:layout_height="222dp"
+        android:editable="false"
         android:minHeight="48dp"
-        android:text="|"
-        android:textSize="33dp"
+        android:text="@string/textoMostrar"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="97dp"
-        tools:ignore="MissingConstraints"
-        android:editable="false"/>
+        android:textSize="40dp"
+        tools:ignore="MissingConstraints"/>
 
     <LinearLayout
-        android:layout_width="94dp"
-        android:layout_height="448dp"
+        android:id="@+id/columna1"
+        android:layout_width="105dp"
+        android:layout_height="568dp"
         android:orientation="vertical"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="161dp">
-
-        <Button
-            android:id="@+id/botonSumar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/botonSuma"
-            android:textSize="33dp"></Button>
+        android:paddingLeft="22dp"
+        app:layout_constraintTop_toBottomOf="@id/mostrarCalculos"
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/boton1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
             android:text="@string/boton1"
-            android:textSize="33dp"></Button>
+            android:textSize="50dp"></Button>
 
         <Button
             android:id="@+id/boton4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
             android:text="@string/boton4"
-            android:textSize="33dp"></Button>
+            android:textSize="50dp"></Button>
 
         <Button
             android:id="@+id/boton7"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
             android:text="@string/boton7"
-            android:textSize="33dp"></Button>
-
-        <Button
-            android:id="@+id/botonmultiplicar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/botonMultiplicar"
-            android:textSize="33dp"></Button>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="94dp"
-        android:layout_height="392dp"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="161dp">
+            android:textSize="50dp"></Button>
 
         <Button
             android:id="@+id/botonCE"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
+            android:textColor="@android:color/holo_red_light"
             android:text="@string/botonCE"
-            android:textSize="33dp"></Button>
+            android:textSize="35dp"></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/columna2"
+        android:layout_width="94dp"
+        android:layout_height="576dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/columna1"
+        app:layout_constraintTop_toBottomOf="@id/mostrarCalculos"
+        tools:ignore="MissingConstraints"
+        android:paddingLeft="16dp">
 
         <Button
             android:id="@+id/boton2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
             android:text="@string/boton2"
-            android:textSize="33dp"></Button>
+            android:textSize="50dp"></Button>
 
         <Button
             android:id="@+id/boton5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
             android:text="@string/boton5"
-            android:textSize="33dp"></Button>
+            android:textSize="50dp"></Button>
 
         <Button
             android:id="@+id/boton8"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
             android:text="@string/boton8"
-            android:textSize="33dp"></Button>
+            android:textSize="50dp"></Button>
 
         <Button
             android:id="@+id/boton0"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
             android:text="@string/boton0"
-            android:textSize="33dp"></Button>
+            android:textSize="50dp"></Button>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="91dp"
-        android:layout_height="339dp"
+        android:id="@+id/columna3"
+        android:layout_width="96dp"
+        android:layout_height="563dp"
         android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/columna2"
+        app:layout_constraintTop_toBottomOf="@id/mostrarCalculos"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="262dp"
-        tools:layout_editor_absoluteY="161dp">
-
-        <Button
-            android:id="@+id/botonIgual"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/botonIgual"
-            android:textSize="33dp"></Button>
+        android:paddingLeft="16dp"
+        >
 
         <Button
             android:id="@+id/boton3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
             android:text="@string/boton3"
-            android:textSize="33dp"></Button>
+            android:textSize="50dp"></Button>
 
         <Button
             android:id="@+id/boton6"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
             android:text="@string/boton6"
-            android:textSize="33dp"></Button>
+            android:textSize="50dp"></Button>
 
         <Button
             android:id="@+id/boton9"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
             android:text="@string/boton9"
-            android:textSize="33dp"></Button>
+            android:textSize="50dp"></Button>
 
         <Button
             android:id="@+id/botonRestar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
             android:text="@string/botonRestar"
-            android:textSize="33dp"></Button>
+            android:textSize="50dp"></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/columna4"
+        android:layout_width="95dp"
+        android:layout_height="557dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/columna3"
+        app:layout_constraintTop_toBottomOf="@id/mostrarCalculos"
+        tools:ignore="MissingConstraints"
+        android:paddingLeft="16dp">
+
+        <Button
+            android:id="@+id/botonDividir"
+            android:layout_width="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
+            android:text="@string/botonDividir"
+            android:textSize="50dp"></Button>
+
+        <Button
+            android:id="@+id/botonmultiplicar"
+            android:layout_width="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
+            android:text="@string/botonMultiplicar"
+            android:textSize="50dp"></Button>
+
+        <Button
+            android:id="@+id/botonSumar"
+            android:layout_width="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
+            android:text="@string/botonSuma"
+            android:textSize="50dp"></Button>
+
+        <Button
+            android:id="@+id/botonIgual"
+            android:layout_width="wrap_content"
+            android:layout_height="89dp"
+            android:width="75dp"
+            android:height="75dp"
+            android:textColor="@android:color/holo_green_light"
+            android:text="@string/botonIgual"
+            android:textSize="50dp"></Button>
 
     </LinearLayout>
 
