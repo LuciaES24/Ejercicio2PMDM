@@ -1,7 +1,6 @@
 package com.lespsan543.ejercicio2pmdm
 
 import android.widget.TextView
-import android.widget.Toast
 
 class Calculo  {
     var num1=""
