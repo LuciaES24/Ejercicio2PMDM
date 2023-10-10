@@ -75,9 +75,8 @@ class MainActivity : AppCompatActivity() {
         botonIgual.setOnClickListener { calculo.pulsarIgual(textoCalcular) }
         botonCE.setOnClickListener { calculo.pulsarCE(textoCalcular) }
     }
-
-}
-
-fun crearToast(){
-    val toast = Toast.makeText(MainActivity(),"Debe introducir 2 números y una operación",Toast.LENGTH_SHORT)
+    fun mostrarToast(){
+        val toast = Toast.makeText(this,"Debe introducir 2 números y una operación", Toast.LENGTH_SHORT)
+        toast.show()
+    }
 }

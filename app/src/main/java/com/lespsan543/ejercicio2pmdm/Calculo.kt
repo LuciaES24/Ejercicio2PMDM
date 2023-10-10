@@ -10,6 +10,22 @@ class Calculo  {
     var pantalla = ""
     var resultado = 0.0
 
+    fun sumar(num1:Double, num2:Double){
+        resultado = num1+num2
+    }
+
+    fun restar(num1:Double, num2:Double){
+        resultado = num1-num2
+    }
+
+    fun multiplicar(num1:Double, num2:Double){
+        resultado = num1*num2
+    }
+
+    fun dividir(num1:Double, num2:Double){
+        resultado = num1/num2
+    }
+
     fun pulsarNumero(textView: TextView, numero:String){
         num1+=numero
         pantalla +=numero
@@ -32,14 +48,13 @@ class Calculo  {
 
     fun pulsarIgual(textView: TextView){
         if (num1=="" && num2=="" && operacion=="" || num2=="" && operacion=="" || num2==""){
-            val toast = Toast.makeText(MainActivity(),"Debe introducir 2 números y una operación", Toast.LENGTH_SHORT)
-            toast.show()
+            MainActivity().mostrarToast()
         }else{
             when (operacion){
-                "+" -> resultado = num2.toDouble()+num1.toDouble()
-                "-" -> resultado = num2.toDouble()-num1.toDouble()
-                "x" -> resultado = num2.toDouble()*num1.toDouble()
-                "/" -> resultado = num2.toDouble()/num1.toDouble()
+                "+" -> sumar(num1.toDouble(),num2.toDouble())
+                "-" -> restar(num1.toDouble(),num2.toDouble())
+                "x" -> multiplicar(num1.toDouble(),num2.toDouble())
+                "/" -> dividir(num1.toDouble(),num2.toDouble())
             }
             pantalla = resultado.toString()
             num2 = resultado.toString()
