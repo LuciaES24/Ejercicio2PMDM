@@ -14,7 +14,7 @@
     <string name="boton6">6</string>
     <string name="botonRestar">-</string>
     <string name="boton0">0</string>
-    <string name="botonDividir">÷</string>
+    <string name="botonDividir">/</string>
     <string name="textoMostrar">|</string>
     <string name="botonCE">CE</string>
 </resources>

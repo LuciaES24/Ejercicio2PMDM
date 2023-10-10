@@ -58,22 +58,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun inicializarListeners(){
-        boton1.setOnClickListener { calculo.pulsar1(textoCalcular) }
-        boton2.setOnClickListener { calculo.pulsar2(textoCalcular) }
-        boton3.setOnClickListener { calculo.pulsar3(textoCalcular) }
-        boton4.setOnClickListener { calculo.pulsar4(textoCalcular) }
-        boton5.setOnClickListener { calculo.pulsar5(textoCalcular) }
-        boton6.setOnClickListener { calculo.pulsar6(textoCalcular) }
-        boton7.setOnClickListener { calculo.pulsar7(textoCalcular) }
-        boton8.setOnClickListener { calculo.pulsar8(textoCalcular) }
-        boton9.setOnClickListener { calculo.pulsar9(textoCalcular) }
-        boton0.setOnClickListener { calculo.pulsar0(textoCalcular) }
-        botonSumar.setOnClickListener { calculo.pulsarSuma(textoCalcular) }
-        botonRestar.setOnClickListener { calculo.pulsarResta(textoCalcular) }
-        botonMultiplicar.setOnClickListener { calculo.pulsarMultiplicacion(textoCalcular) }
-        botonDividir.setOnClickListener { calculo.pulsarDivision(textoCalcular) }
+        boton1.setOnClickListener { calculo.pulsarNumero(textoCalcular,"1") }
+        boton2.setOnClickListener { calculo.pulsarNumero(textoCalcular,"2") }
+        boton3.setOnClickListener { calculo.pulsarNumero(textoCalcular,"3") }
+        boton4.setOnClickListener { calculo.pulsarNumero(textoCalcular,"4") }
+        boton5.setOnClickListener { calculo.pulsarNumero(textoCalcular,"5") }
+        boton6.setOnClickListener { calculo.pulsarNumero(textoCalcular,"6") }
+        boton7.setOnClickListener { calculo.pulsarNumero(textoCalcular,"7") }
+        boton8.setOnClickListener { calculo.pulsarNumero(textoCalcular,"8") }
+        boton9.setOnClickListener { calculo.pulsarNumero(textoCalcular,"9") }
+        boton0.setOnClickListener { calculo.pulsarNumero(textoCalcular,"0") }
+        botonSumar.setOnClickListener { calculo.pulsarSigno(textoCalcular,"+") }
+        botonRestar.setOnClickListener { calculo.pulsarSigno(textoCalcular,"-") }
+        botonMultiplicar.setOnClickListener { calculo.pulsarSigno(textoCalcular,"x") }
+        botonDividir.setOnClickListener { calculo.pulsarSigno(textoCalcular,"/") }
         botonIgual.setOnClickListener { calculo.pulsarIgual(textoCalcular) }
         botonCE.setOnClickListener { calculo.pulsarCE(textoCalcular) }
     }
 
+}
+
+fun crearToast(){
+    val toast = Toast.makeText(MainActivity(),"Debe introducir 2 números y una operación",Toast.LENGTH_SHORT)
 }
