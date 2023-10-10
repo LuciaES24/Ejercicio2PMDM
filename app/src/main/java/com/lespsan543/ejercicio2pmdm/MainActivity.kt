@@ -7,6 +7,9 @@ import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+    /**
+     * Creamos una variable para cada elemento del layout
+     */
     lateinit var textoCalcular : TextView
     lateinit var boton1 : Button
     lateinit var boton2 : Button
@@ -25,6 +28,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var botonIgual : Button
     lateinit var botonCE : Button
 
+    /**
+     * @param calculo objeto de la clase Calculo()
+     */
     var calculo = Calculo()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +43,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * Función para inicializar cada componente buscandolo por su id en el layout
+     */
     fun inicializarComponentes(){
         textoCalcular = findViewById(R.id.mostrarCalculos)
         boton1 = findViewById(R.id.boton1)
@@ -57,6 +66,9 @@ class MainActivity : AppCompatActivity() {
         botonCE = findViewById(R.id.botonCE)
     }
 
+    /**
+     * Función para que cada botón realice su función correspondiente al pulsarlo
+     */
     fun inicializarListeners(){
         boton1.setOnClickListener { calculo.pulsarNumero(textoCalcular,"1") }
         boton2.setOnClickListener { calculo.pulsarNumero(textoCalcular,"2") }
