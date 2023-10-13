@@ -65,7 +65,7 @@ class Calculo  {
             operacion = signo
             pantalla += signo
         }//Si se pulsa una operación seguida de otra, sesustituirá la primera por la nueva introducida
-        else if (operacion!="" && num2 !=""){
+        else if (operacion!=""){
             pantalla = pantalla.substring(0,pantalla.length-1)
             operacion = signo
             pantalla += operacion
