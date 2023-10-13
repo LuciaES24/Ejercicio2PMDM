@@ -84,11 +84,22 @@ class MainActivity : AppCompatActivity() {
         botonRestar.setOnClickListener { calculo.pulsarSigno(textoCalcular,"-") }
         botonMultiplicar.setOnClickListener { calculo.pulsarSigno(textoCalcular,"x") }
         botonDividir.setOnClickListener { calculo.pulsarSigno(textoCalcular,"/") }
-        botonIgual.setOnClickListener { calculo.pulsarIgual(textoCalcular) }
+        botonIgual.setOnClickListener { pulsarIgual(textoCalcular) }
         botonCE.setOnClickListener { calculo.pulsarCE(textoCalcular) }
     }
-    fun mostrarToast(){
-        val toast = Toast.makeText(this,"Debe introducir 2 números y una operación", Toast.LENGTH_SHORT)
-        toast.show()
+
+    /**
+     * Función que se realizará cuando se pulse el símbolo igual
+     */
+    fun pulsarIgual(textView: TextView){
+        //Si se pulsa el igual sin tener los 2 números y la operación se mostrará el mensaje
+        if (calculo.num1=="" && calculo.num2=="" && calculo.operacion=="" || calculo.num1=="" && calculo.operacion=="" || calculo.num1==""){
+            val toast = Toast.makeText(this,"Debe introducir 2 números y una operación", Toast.LENGTH_SHORT)
+            toast.show()
+        }//Si está correcto, se realizará el cálculo
+        else{
+            calculo.operar(textView)
+        }
     }
 }
+
