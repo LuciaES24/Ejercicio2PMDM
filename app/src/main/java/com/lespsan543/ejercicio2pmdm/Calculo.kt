@@ -48,7 +48,7 @@ class Calculo  {
     /**
      * Función que guardará el número seleccionado cada vez que se pulse
      */
-    fun pulsarNumero(textView: TextView, numero:String){
+    fun pulsarNumeroODecimal(textView: TextView, numero:String){
         num1+=numero
         pantalla +=numero
         textView.text = pantalla
@@ -58,24 +58,20 @@ class Calculo  {
      * Función que se llevará a cabo cuando se pulse algún signo (+,-,/,x)
      */
     fun pulsarSigno(textView: TextView,signo:String){
-        //Si ya se han introducido los 2 números y la operación y se pulsa otra trás el segundo número
+        //Si se pulsa una operación seguida de otra, se sustituirá la primera por la nueva introducida
+        if (operacion!="" && num1 == "" && num2 !=""){
+            pantalla = pantalla.substring(0,pantalla.length-1)
+        } //Si ya se han introducido los 2 números y la operación y se pulsa otra trás el segundo número
         //se muestra el resultado y la nueva operación a la espera de introducir otro número
         if (operacion != "" && num1 != "" && num2 !=""){
             operar(textView)
-            operacion = signo
-            pantalla += signo
-        }//Si se pulsa una operación seguida de otra, sesustituirá la primera por la nueva introducida
-        else if (operacion!=""){
-            pantalla = pantalla.substring(0,pantalla.length-1)
-            operacion = signo
-            pantalla += operacion
         }//Si se introduce correctamente se guardará la operación con normalidad
         else{
-            operacion = signo
-            pantalla += signo
             num2 = num1
             num1 = ""
         }
+        operacion = signo
+        pantalla += operacion
         textView.text = pantalla
     }
 
@@ -104,6 +100,22 @@ class Calculo  {
         operacion = ""
         pantalla = ""
         resultado = 0.0
+        textView.text = pantalla
+    }
+
+    /**
+     * Función para eliminar el último elemento que se ha escrito
+     */
+    fun pulsarDEL(textView: TextView){
+        pantalla = pantalla.substring(0,pantalla.length-1)
+        val ultimoElemento = pantalla.last()
+        if (ultimoElemento == num1.last()){
+            num1 = num1.substring(0,num1.length-1)
+        }else if(ultimoElemento.toString() == operacion){
+            operacion = ""
+        }else if(ultimoElemento == num2.last()){
+            num2 = num2.substring(0,num2.length-1)
+        }
         textView.text = pantalla
     }
 }

@@ -21,11 +21,13 @@ class MainActivity : AppCompatActivity() {
     lateinit var boton8 : Button
     lateinit var boton9 : Button
     lateinit var boton0 : Button
+    lateinit var botonDecimal : Button
     lateinit var botonSumar : Button
     lateinit var botonRestar : Button
     lateinit var botonDividir : Button
     lateinit var botonMultiplicar : Button
     lateinit var botonIgual : Button
+    lateinit var botonDEL : Button
     lateinit var botonCE : Button
 
     /**
@@ -58,11 +60,13 @@ class MainActivity : AppCompatActivity() {
         boton8 = findViewById(R.id.boton8)
         boton9 = findViewById(R.id.boton9)
         boton0 = findViewById(R.id.boton0)
+        botonDecimal = findViewById(R.id.decimal)
         botonSumar = findViewById(R.id.botonSumar)
         botonRestar = findViewById(R.id.botonRestar)
         botonMultiplicar = findViewById(R.id.botonmultiplicar)
         botonDividir = findViewById(R.id.botonDividir)
         botonIgual = findViewById(R.id.botonIgual)
+        botonDEL = findViewById(R.id.DEL)
         botonCE = findViewById(R.id.botonCE)
     }
 
@@ -70,21 +74,23 @@ class MainActivity : AppCompatActivity() {
      * Función para que cada botón realice su función correspondiente al pulsarlo
      */
     fun inicializarListeners(){
-        boton1.setOnClickListener { calculo.pulsarNumero(textoCalcular,"1") }
-        boton2.setOnClickListener { calculo.pulsarNumero(textoCalcular,"2") }
-        boton3.setOnClickListener { calculo.pulsarNumero(textoCalcular,"3") }
-        boton4.setOnClickListener { calculo.pulsarNumero(textoCalcular,"4") }
-        boton5.setOnClickListener { calculo.pulsarNumero(textoCalcular,"5") }
-        boton6.setOnClickListener { calculo.pulsarNumero(textoCalcular,"6") }
-        boton7.setOnClickListener { calculo.pulsarNumero(textoCalcular,"7") }
-        boton8.setOnClickListener { calculo.pulsarNumero(textoCalcular,"8") }
-        boton9.setOnClickListener { calculo.pulsarNumero(textoCalcular,"9") }
-        boton0.setOnClickListener { calculo.pulsarNumero(textoCalcular,"0") }
+        boton1.setOnClickListener { calculo.pulsarNumeroODecimal(textoCalcular,"1") }
+        boton2.setOnClickListener { calculo.pulsarNumeroODecimal(textoCalcular,"2") }
+        boton3.setOnClickListener { calculo.pulsarNumeroODecimal(textoCalcular,"3") }
+        boton4.setOnClickListener { calculo.pulsarNumeroODecimal(textoCalcular,"4") }
+        boton5.setOnClickListener { calculo.pulsarNumeroODecimal(textoCalcular,"5") }
+        boton6.setOnClickListener { calculo.pulsarNumeroODecimal(textoCalcular,"6") }
+        boton7.setOnClickListener { calculo.pulsarNumeroODecimal(textoCalcular,"7") }
+        boton8.setOnClickListener { calculo.pulsarNumeroODecimal(textoCalcular,"8") }
+        boton9.setOnClickListener { calculo.pulsarNumeroODecimal(textoCalcular,"9") }
+        boton0.setOnClickListener { calculo.pulsarNumeroODecimal(textoCalcular,"0") }
+        botonDecimal.setOnClickListener { calculo.pulsarNumeroODecimal(textoCalcular,".") }
         botonSumar.setOnClickListener { calculo.pulsarSigno(textoCalcular,"+") }
         botonRestar.setOnClickListener { calculo.pulsarSigno(textoCalcular,"-") }
         botonMultiplicar.setOnClickListener { calculo.pulsarSigno(textoCalcular,"x") }
         botonDividir.setOnClickListener { calculo.pulsarSigno(textoCalcular,"/") }
         botonIgual.setOnClickListener { pulsarIgual(textoCalcular) }
+        botonDEL.setOnClickListener { calculo.pulsarDEL(textoCalcular) }
         botonCE.setOnClickListener { calculo.pulsarCE(textoCalcular) }
     }
 
