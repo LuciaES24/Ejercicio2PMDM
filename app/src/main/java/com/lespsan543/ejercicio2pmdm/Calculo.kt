@@ -6,7 +6,7 @@ class Calculo  {
     /**
      * @param num1 string que guarda el número actual que se está tecleando y guardará el
      * segundo número que se vaya a introducir
-     * @param num2 string que guarda el número una vez se ha pulsado un operador
+     * @param num2 string que guarda el número 1 una vez se ha pulsado un operador
      * @param operacion string que guarda el último operador que se seleccione
      * @param pantalla string que guarda la cadena completa de los botones que se cliqueen
      * @param resultado double que guardará el resultado total de la operación
@@ -109,11 +109,16 @@ class Calculo  {
     fun pulsarDEL(textView: TextView){
         pantalla = pantalla.substring(0,pantalla.length-1)
         val ultimoElemento = buscarUltimoElemento(pantalla)
+        //Si el último elemento coincide con el de num1 eliminamos el último elemento de num1
         if (buscarUltimoElemento(num1) == ultimoElemento){
             num1 = num1.substring(0,num1.length-1)
-        }else if (buscarUltimoElemento(num2) == ultimoElemento){
+        }
+        //Si el último elemento coincide con el de num2 eliminamos el último elemento de num2
+        else if (buscarUltimoElemento(num2) == ultimoElemento){
             num2 = num2.substring(0,num2.length-1)
-        }else if (operacion == ultimoElemento){
+        }
+        //Si el último elemento coincide con el operador, lo reiniciamos
+        else if (operacion == ultimoElemento){
             operacion = ""
         }
         textView.text = pantalla
