@@ -108,14 +108,15 @@ class Calculo  {
      */
     fun pulsarDEL(textView: TextView){
         pantalla = pantalla.substring(0,pantalla.length-1)
-        val ultimoElemento = pantalla.last()
-        if (ultimoElemento == num1.last()){
+        val ultimoElemento = buscarUltimoElemento(pantalla)
+        if (buscarUltimoElemento(num1) == ultimoElemento){
             num1 = num1.substring(0,num1.length-1)
-        }else if(ultimoElemento.toString() == operacion){
-            operacion = ""
-        }else if(ultimoElemento == num2.last()){
+        }else if (buscarUltimoElemento(num2) == ultimoElemento){
             num2 = num2.substring(0,num2.length-1)
+        }else if (operacion == ultimoElemento){
+            num1 = num1.substring(0,num1.length-1)
         }
         textView.text = pantalla
     }
+
 }
