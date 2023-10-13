@@ -46,7 +46,7 @@ class Calculo  {
     }
 
     /**
-     * Función que guardará el número seleccionado cada vez que se pulse
+     * Función que guardará el número seleccionado cada vez que se pulse o el punto para decimales
      */
     fun pulsarNumeroODecimal(textView: TextView, numero:String){
         num1+=numero
@@ -61,9 +61,9 @@ class Calculo  {
         //Si se pulsa una operación seguida de otra, se sustituirá la primera por la nueva introducida
         if (operacion!="" && num1 == "" && num2 !=""){
             pantalla = pantalla.substring(0,pantalla.length-1)
-        } //Si ya se han introducido los 2 números y la operación y se pulsa otra trás el segundo número
+        }//Si ya se han introducido los 2 números y la operación y se pulsa otra trás el segundo número
         //se muestra el resultado y la nueva operación a la espera de introducir otro número
-        if (operacion != "" && num1 != "" && num2 !=""){
+        else if (operacion != "" && num1 != "" && num2 !=""){
             operar(textView)
         }//Si se introduce correctamente se guardará la operación con normalidad
         else{
@@ -114,9 +114,8 @@ class Calculo  {
         }else if (buscarUltimoElemento(num2) == ultimoElemento){
             num2 = num2.substring(0,num2.length-1)
         }else if (operacion == ultimoElemento){
-            num1 = num1.substring(0,num1.length-1)
+            operacion = ""
         }
         textView.text = pantalla
     }
-
 }

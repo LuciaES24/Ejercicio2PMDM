@@ -113,6 +113,10 @@ class MainActivity : AppCompatActivity() {
  * Función para buscar el último elemento de una cadena
  */
 fun buscarUltimoElemento(elemento:String):String{
-    return elemento.substring(elemento.length-1,elemento.length)
+    var resultado = ""
+    if (elemento.length>0){
+        resultado = elemento.substring(elemento.length)
+    }
+    return resultado
 }
 
