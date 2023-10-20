@@ -96,6 +96,8 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * Función que se realizará cuando se pulse el símbolo igual
+     *
+     * @param textView string que vamos a modificar para mostrar por pantalla
      */
     fun pulsarIgual(textView: TextView){
         //Si se pulsa el igual sin tener los 2 números y la operación se mostrará el mensaje
@@ -111,6 +113,8 @@ class MainActivity : AppCompatActivity() {
 
 /**
  * Función para buscar el último elemento de una cadena
+ *
+ * @param elemento string del que queremos obtener el último elemento
  */
 fun buscarUltimoElemento(elemento:String):String{
     var resultado = ""

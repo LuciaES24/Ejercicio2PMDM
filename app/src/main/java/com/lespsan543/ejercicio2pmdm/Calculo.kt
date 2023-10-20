@@ -19,6 +19,9 @@ class Calculo  {
 
     /**
      * Función para realizar la suma
+     *
+     * @param num1 string que contiene el segundo número introducido
+     * @param num2 string que contiene el primer número introducido
      */
     fun sumar(num1:Double, num2:Double){
         resultado = num2+num1
@@ -26,6 +29,9 @@ class Calculo  {
 
     /**
      * Función para realizar la resta
+     *
+     * @param num1 string que contiene el segundo número introducido
+     * @param num2 string que contiene el primer número introducido
      */
     fun restar(num1:Double, num2:Double){
         resultado = num2-num1
@@ -33,6 +39,9 @@ class Calculo  {
 
     /**
      * Función para realizar la multiplicación
+     *
+     * @param num1 string que contiene el segundo número introducido
+     * @param num2 string que contiene el primer número introducido
      */
     fun multiplicar(num1:Double, num2:Double){
         resultado = num2*num1
@@ -40,6 +49,9 @@ class Calculo  {
 
     /**
      * Función para realizar la división
+     *
+     * @param num1 string que contiene el segundo número introducido
+     * @param num2 string que contiene el primer número introducido
      */
     fun dividir(num1:Double, num2:Double){
         resultado = num2/num1
@@ -47,15 +59,25 @@ class Calculo  {
 
     /**
      * Función que guardará el número seleccionado cada vez que se pulse o el punto para decimales
+     *
+     * @param textView string que vamos a modificar para mostrar por pantalla
+     * @param numero string con el número o punto que se ha pulsado
      */
     fun pulsarNumeroODecimal(textView: TextView, numero:String){
-        num1+=numero
-        pantalla +=numero
-        textView.text = pantalla
+        if (num1.contains(".") && numero=="."){
+            num1 = num1
+        }else{
+            num1+=numero
+            pantalla +=numero
+            textView.text = pantalla
+        }
     }
 
     /**
      * Función que se llevará a cabo cuando se pulse algún signo (+,-,/,x)
+     *
+     * @param textView string que vamos a modificar para mostrar por pantalla
+     * @param signo string de texto en la que se pasará el signo pulsado
      */
     fun pulsarSigno(textView: TextView,signo:String){
         //Si se pulsa una operación seguida de otra, se sustituirá la primera por la nueva introducida
@@ -77,6 +99,8 @@ class Calculo  {
 
     /**
      * Función que realizará los cálculos según la operación que se haya seleccionado
+     *
+     * @param textView string que vamos a modificar para mostrar por pantalla
      */
     fun operar(textView: TextView){
         when (operacion){
@@ -93,6 +117,8 @@ class Calculo  {
 
     /**
      * Función para el botón CE que reiniciará todos los valores
+     *
+     * @param textView string que vamos a modificar para mostrar por pantalla
      */
     fun pulsarCE(textView: TextView){
         num2 = ""
@@ -105,6 +131,8 @@ class Calculo  {
 
     /**
      * Función para eliminar el último elemento que se ha escrito
+     *
+     * @param textView string que vamos a modificar para mostrar por pantalla
      */
     fun pulsarDEL(textView: TextView){
         pantalla = pantalla.substring(0,pantalla.length-1)
@@ -122,5 +150,13 @@ class Calculo  {
             operacion = ""
         }
         textView.text = pantalla
+    }
+
+    fun comprobarIntOrDouble(){
+
+    }
+
+    fun redondearResultado(resultado:Double){
+
     }
 }
