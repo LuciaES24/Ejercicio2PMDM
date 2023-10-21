@@ -1,6 +1,7 @@
 package com.lespsan543.ejercicio2pmdm
 
 import android.widget.TextView
+import java.text.DecimalFormat
 
 class Calculo  {
     /**
@@ -15,7 +16,7 @@ class Calculo  {
     var num2=""
     var operacion = ""
     var pantalla = ""
-    var resultado = 0.0
+    var resultado: String = ""
 
     /**
      * Función para realizar la suma
@@ -24,7 +25,8 @@ class Calculo  {
      * @param num2 string que contiene el primer número introducido
      */
     fun sumar(num1:Double, num2:Double){
-        resultado = num2+num1
+        resultado = (num2+num1).toString()
+        resultado = redondearResultado(resultado.toDouble())
     }
 
     /**
@@ -34,7 +36,8 @@ class Calculo  {
      * @param num2 string que contiene el primer número introducido
      */
     fun restar(num1:Double, num2:Double){
-        resultado = num2-num1
+        resultado = (num2-num1).toString()
+        resultado = redondearResultado(resultado.toDouble())
     }
 
     /**
@@ -44,7 +47,8 @@ class Calculo  {
      * @param num2 string que contiene el primer número introducido
      */
     fun multiplicar(num1:Double, num2:Double){
-        resultado = num2*num1
+        resultado = (num2*num1).toString()
+        resultado = redondearResultado(resultado.toDouble())
     }
 
     /**
@@ -54,7 +58,8 @@ class Calculo  {
      * @param num2 string que contiene el primer número introducido
      */
     fun dividir(num1:Double, num2:Double){
-        resultado = num2/num1
+        resultado = (num2/num1).toString()
+        resultado = redondearResultado(resultado.toDouble())
     }
 
     /**
@@ -80,21 +85,30 @@ class Calculo  {
      * @param signo string de texto en la que se pasará el signo pulsado
      */
     fun pulsarSigno(textView: TextView,signo:String){
-        //Si se pulsa una operación seguida de otra, se sustituirá la primera por la nueva introducida
-        if (operacion!="" && num1 == "" && num2 !=""){
+        //Si no se ha introducido ningún número
+        if(num1 == "" && num2 == ""){
+            operacion = ""
+        } //Si se pulsa una operación seguida de otra, se sustituirá la primera por la nueva introducida
+        else if (operacion!="" && num1 == "" && num2 !=""){
             pantalla = pantalla.substring(0,pantalla.length-1)
+            operacion = signo
+            pantalla += operacion
+            textView.text = pantalla
         }//Si ya se han introducido los 2 números y la operación y se pulsa otra trás el segundo número
         //se muestra el resultado y la nueva operación a la espera de introducir otro número
         else if (operacion != "" && num1 != "" && num2 !=""){
             operar(textView)
+            operacion = signo
+            pantalla += operacion
+            textView.text = pantalla
         }//Si se introduce correctamente se guardará la operación con normalidad
         else{
             num2 = num1
             num1 = ""
+            operacion = signo
+            pantalla += operacion
+            textView.text = pantalla
         }
-        operacion = signo
-        pantalla += operacion
-        textView.text = pantalla
     }
 
     /**
@@ -109,9 +123,10 @@ class Calculo  {
             "x" -> multiplicar(num1.toDouble(),num2.toDouble())
             "/" -> dividir(num1.toDouble(),num2.toDouble())
         }
-        pantalla = resultado.toString()
-        num2 = resultado.toString()
+        pantalla = resultado
+        num2 = resultado
         num1 = ""
+        operacion = ""
         textView.text = pantalla
     }
 
@@ -125,7 +140,7 @@ class Calculo  {
         num1 = ""
         operacion = ""
         pantalla = ""
-        resultado = 0.0
+        resultado = ""
         textView.text = pantalla
     }
 
@@ -135,28 +150,33 @@ class Calculo  {
      * @param textView string que vamos a modificar para mostrar por pantalla
      */
     fun pulsarDEL(textView: TextView){
-        pantalla = pantalla.substring(0,pantalla.length-1)
-        val ultimoElemento = buscarUltimoElemento(pantalla)
-        //Si el último elemento coincide con el de num1 eliminamos el último elemento de num1
-        if (buscarUltimoElemento(num1) == ultimoElemento){
-            num1 = num1.substring(0,num1.length-1)
-        }
-        //Si el último elemento coincide con el de num2 eliminamos el último elemento de num2
-        else if (buscarUltimoElemento(num2) == ultimoElemento){
-            num2 = num2.substring(0,num2.length-1)
-        }
-        //Si el último elemento coincide con el operador, lo reiniciamos
-        else if (operacion == ultimoElemento){
-            operacion = ""
+        if (pantalla != ""){
+            pantalla = pantalla.substring(0,pantalla.length-1)
+            val ultimoElemento = buscarUltimoElemento(pantalla)
+            //Si el último elemento coincide con el de num1 eliminamos el último elemento de num1
+            if (buscarUltimoElemento(num1) == ultimoElemento){
+                num1 = num1.substring(0,num1.length-1)
+            } //Si el último elemento coincide con el de num2 eliminamos el último elemento de num2
+            else if (buscarUltimoElemento(num2) == ultimoElemento){
+                num2 = num2.substring(0,num2.length-1)
+            } //Si el último elemento coincide con el operador, lo reiniciamos
+            else if (operacion == ultimoElemento){
+                operacion = ""
+            }
+        }else{
+            pantalla = pantalla
         }
         textView.text = pantalla
     }
 
-    fun comprobarIntOrDouble(){
-
-    }
-
-    fun redondearResultado(resultado:Double){
-
+    /**
+     * Redondea cualquier número para que tenga solo 2 decimales
+     *
+     * @param resultado número decimal que queremos redondear
+     * @return string con el número redondeado
+     */
+    fun redondearResultado(resultado:Double) : String{
+        val formatoDecimal = DecimalFormat("#.##")
+        return formatoDecimal.format(resultado)
     }
 }
