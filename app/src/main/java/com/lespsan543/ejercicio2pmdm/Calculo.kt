@@ -94,7 +94,7 @@ class Calculo  {
             operacion = signo
             pantalla += operacion
             textView.text = pantalla
-        }//Si ya se han introducido los 2 números y la operación y se pulsa otra trás el segundo número
+        }//Si ya se han introducido los 2 números y la operación y se pulsa otra despues del segundo número
         //se muestra el resultado y la nueva operación a la espera de introducir otro número
         else if (operacion != "" && num1 != "" && num2 !=""){
             operar(textView)
@@ -150,7 +150,7 @@ class Calculo  {
      * @param textView string que vamos a modificar para mostrar por pantalla
      */
     fun pulsarDEL(textView: TextView){
-        if (pantalla != ""){
+        if (pantalla != "" && resultado==""){
             pantalla = pantalla.substring(0,pantalla.length-1)
             val ultimoElemento = buscarUltimoElemento(pantalla)
             //Si el último elemento coincide con el de num1 eliminamos el último elemento de num1
