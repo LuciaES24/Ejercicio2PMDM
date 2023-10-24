@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:forceDarkAllowed="false"
     android:layout_gravity="center">
 
     <TextView
@@ -13,9 +14,8 @@
         android:layout_height="222dp"
         android:editable="false"
         android:minHeight="48dp"
-        android:text="@string/textoMostrar"
         android:textAlignment="center"
-        android:textSize="40dp"
+        android:textSize="40sp"
         tools:ignore="MissingConstraints"/>
 
     <LinearLayout
@@ -34,7 +34,7 @@
             android:width="75dp"
             android:height="75dp"
             android:text="@string/boton1"
-            android:textSize="50dp"></Button>
+            android:textSize="50sp"></Button>
 
         <Button
             android:id="@+id/boton4"
@@ -43,7 +43,7 @@
             android:width="75dp"
             android:height="75dp"
             android:text="@string/boton4"
-            android:textSize="50dp"></Button>
+            android:textSize="50sp"></Button>
 
         <Button
             android:id="@+id/boton7"
@@ -52,7 +52,7 @@
             android:width="75dp"
             android:height="75dp"
             android:text="@string/boton7"
-            android:textSize="50dp"></Button>
+            android:textSize="50sp"></Button>
 
         <Button
             android:id="@+id/decimal"
@@ -61,7 +61,7 @@
             android:width="75dp"
             android:height="75dp"
             android:text="@string/botonDecimal"
-            android:textSize="50dp"></Button>
+            android:textSize="50sp"></Button>
 
     </LinearLayout>
 
@@ -178,8 +178,8 @@
             android:width="75dp"
             android:height="75dp"
             android:textColor="@android:color/holo_blue_light"
-            android:text="@string/botonDEL"
-            android:textSize="23sp"></Button>
+            android:text="@string/btnBorrar"
+            android:textSize="40sp"></Button>
 
         <Button
             android:id="@+id/botonDividir"

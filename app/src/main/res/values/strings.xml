@@ -15,8 +15,7 @@
     <string name="botonRestar">-</string>
     <string name="boton0">0</string>
     <string name="botonDividir">/</string>
-    <string name="textoMostrar">|</string>
     <string name="botonCE">CE</string>
-    <string name="botonDEL">DEL</string>
+    <string name="btnBorrar"><![CDATA[<]]></string>
     <string name="botonDecimal">.</string>
 </resources>

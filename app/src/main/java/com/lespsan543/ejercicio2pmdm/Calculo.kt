@@ -72,7 +72,10 @@ class Calculo  {
         //Si el número ya contiene un punto, no puede añadir más
         if (num1.contains(".") && numero=="."){
             num1 = num1
-        }else{
+        }else if(numero=="." && num1 == ""){
+            num1 = num1
+        }
+        else{
             num1+=numero
             pantalla +=numero
             textView.text = pantalla
@@ -185,6 +188,7 @@ class Calculo  {
      */
     fun redondearResultado(resultado:Double) : String{
         val formatoDecimal = DecimalFormat("#.##")
-        return formatoDecimal.format(resultado)
+        val cambio = formatoDecimal.format(resultado)
+        return cambio.replace(",",".")
     }
 }
