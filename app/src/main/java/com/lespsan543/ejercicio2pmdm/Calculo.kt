@@ -69,6 +69,7 @@ class Calculo  {
      * @param numero string con el número o punto que se ha pulsado
      */
     fun pulsarNumeroODecimal(textView: TextView, numero:String){
+        //Si el número ya contiene un punto, no puede añadir más
         if (num1.contains(".") && numero=="."){
             num1 = num1
         }else{
@@ -101,7 +102,12 @@ class Calculo  {
             operacion = signo
             pantalla += operacion
             textView.text = pantalla
-        }//Si se introduce correctamente se guardará la operación con normalidad
+        }//Si solo se ha introducido num2
+        else if(num2!=""){
+            operacion = signo
+            pantalla += operacion
+            textView.text = pantalla
+        } //Si se introduce correctamente se guardará la operación con normalidad
         else{
             num2 = num1
             num1 = ""
@@ -151,8 +157,8 @@ class Calculo  {
      */
     fun pulsarDEL(textView: TextView){
         if (pantalla != "" && resultado==""){
-            pantalla = pantalla.substring(0,pantalla.length-1)
             val ultimoElemento = buscarUltimoElemento(pantalla)
+            pantalla = pantalla.substring(0,pantalla.length-1)
             //Si el último elemento coincide con el de num1 eliminamos el último elemento de num1
             if (buscarUltimoElemento(num1) == ultimoElemento){
                 num1 = num1.substring(0,num1.length-1)
@@ -162,6 +168,8 @@ class Calculo  {
             } //Si el último elemento coincide con el operador, lo reiniciamos
             else if (operacion == ultimoElemento){
                 operacion = ""
+                num1 = num2
+                num2 = ""
             }
         }else{
             pantalla = pantalla

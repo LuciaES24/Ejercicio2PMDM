@@ -119,7 +119,7 @@ class MainActivity : AppCompatActivity() {
 fun buscarUltimoElemento(elemento:String):String{
     var resultado = ""
     if (elemento.length>0){
-        resultado = elemento.substring(elemento.length)
+        resultado = elemento.substring(elemento.length-1,elemento.length)
     }
     return resultado
 }
